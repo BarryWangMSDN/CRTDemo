@@ -18,6 +18,8 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <CheckBox HorizontalAlignment="Left" IsChecked="True" Margin="15,0,0,0"/>
+                <TextBox HorizontalAlignment="Left" Width="200" Margin="50,0,0,0"/>
             </Grid>
         </DataTemplate>
     </Page.Resources>
@@ -51,12 +53,15 @@
             x:Name="MasterListView"
             Grid.Row="1"
             IsItemClickEnabled="True"
+            ItemTemplate="{StaticResource MasterListViewItemTemplate}"
             ItemClick="MasterListView_ItemClick">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                 </Style>
             </ListView.ItemContainerStyle>
+            <x:String>1</x:String>
+            <x:String>2</x:String>
         </ListView>
 
         <ContentPresenter
