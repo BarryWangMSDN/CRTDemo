@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="BlankApp1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BlankApp1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid> 
+        <NavigationView x:Name="NavigationViewControl" 
+                        IsBackButtonVisible="Collapsed"
+                        ItemInvoked="NavigationViewControl_ItemInvoked" >
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Home" Content="Home" Tag="Home" />
+                <NavigationViewItem Icon="Account" Content="App" Tag="account" />
+                <NavigationViewItem Icon="CellPhone" Content="Phone" Tag="phone" />
+                <NavigationViewItemSeparator/>
+            </NavigationView.MenuItems>
+            <NavigationView.PaneCustomContent>
+                <RelativePanel>
+                    <Border x:Name="loginfon" RelativePanel.AlignVerticalCenterWithPanel="True" >
+                        <FontIcon Width="25" Height="35" Glyph="&#xE77B;"/>
+                    </Border>
+                    <Button x:Name="loginbtn" RelativePanel.RightOf="loginfon" Width="200" Height="35" Content="Login"/>
+                    <FontIcon Width="25" Height="35" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.RightOf="loginbtn" Glyph="&#xE71E;"/>
+                </RelativePanel>
+            </NavigationView.PaneCustomContent>
+            <NavigationView.Header>
+                <ContentControl/>
+            </NavigationView.Header>
+            <ScrollViewer>
+                <Frame x:Name="ContentFrame" Padding="12,0,12,24" IsTabStop="True"/>
+            </ScrollViewer>
+        </NavigationView>
+    </Grid>
+</Page>
