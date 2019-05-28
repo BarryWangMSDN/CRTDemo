@@ -1,0 +1,15 @@
+﻿<UserControl
+    x:Class="BlankApp1.TaskItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BlankApp1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+
+    <StackPanel x:Name="defaultsp" Orientation="Horizontal">
+        <TextBox HorizontalAlignment="Center" Width="{Binding ElementName=defaultsp,Path=ActualWidth}" Text="Add Task" Height="30" />
+        <Button Content="Add" Width="30" HorizontalAlignment="Right"/>
+    </StackPanel>
+</UserControl>

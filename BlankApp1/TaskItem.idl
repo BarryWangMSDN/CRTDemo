@@ -1,0 +1,9 @@
+namespace BlankApp1
+{
+    [default_interface]
+    runtimeclass TaskItem : Windows.UI.Xaml.Controls.UserControl
+    {
+        TaskItem();
+        Int32 MyProperty;
+    }
+}

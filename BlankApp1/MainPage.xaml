@@ -25,11 +25,8 @@
                     <FontIcon Width="25" Height="35" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.RightOf="loginbtn" Glyph="&#xE71E;"/>
                 </RelativePanel>
             </NavigationView.PaneCustomContent>
-            <NavigationView.Header>
-                <ContentControl/>
-            </NavigationView.Header>
             <ScrollViewer>
-                <Frame x:Name="ContentFrame" Padding="12,0,12,24" IsTabStop="True"/>
+                <Frame x:Name="ContentFrame" IsTabStop="True"/>
             </ScrollViewer>
         </NavigationView>
     </Grid>
