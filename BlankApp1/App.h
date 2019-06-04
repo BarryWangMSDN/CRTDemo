@@ -8,8 +8,13 @@ namespace winrt::BlankApp1::implementation
     {
         App();
 
+
+		void testmethod(hstring test1);
         void OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs const&);
         void OnSuspending(IInspectable const&, Windows::ApplicationModel::SuspendingEventArgs const&);
         void OnNavigationFailed(IInspectable const&, Windows::UI::Xaml::Navigation::NavigationFailedEventArgs const&);
+
+	private:
+		int s;
     };
 }

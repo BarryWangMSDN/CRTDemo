@@ -13,14 +13,7 @@
     </Page.Transitions>
     <Page.Resources>
         <DataTemplate x:Key="MasterListViewItemTemplate">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <CheckBox HorizontalAlignment="Left" IsChecked="True" Margin="15,0,0,0"/>
-                <TextBox HorizontalAlignment="Left" Width="200" Margin="50,0,0,0"/>
-            </Grid>
+            <local:TaskItem/>
         </DataTemplate>
     </Page.Resources>
     <Grid  x:Name="LayoutRoot">
@@ -32,6 +25,70 @@
             <ColumnDefinition x:Name="MasterColumn" Width="1200" />
             <ColumnDefinition x:Name="DetailColumn" Width="*" />
         </Grid.ColumnDefinitions>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="PageSizeStatesGroup">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720"  />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MasterListView.Visibility" Value="Visible" />
+                        <Setter Target="DetailContentPresenter.Visibility" Value="Visible" />
+                        <Setter Target="MasterColumn.Width" Value="1080" />
+                        <Setter Target="DetailColumn.Width" Value="*"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"  />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MasterListView.Visibility" Value="Visible" />
+                        <Setter Target="DetailContentPresenter.Visibility" Value="Collapsed" />
+                        <Setter Target="MasterColumn.Width" Value="*" />
+                        <Setter Target="DetailColumn.Width" Value="0"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+            <VisualStateGroup x:Name="MasterDetailsStatesGroup">
+
+                <VisualState x:Name="MasterState">
+                    <VisualState.Setters>
+                        <Setter Target="MasterListView.SelectionMode" Value="None" />
+                        <Setter Target="MasterListView.IsItemClickEnabled" Value="True" />
+                        <!--#region App Bar Commands-->
+                       
+                        <!--#endregion-->
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="MasterDetailsState">
+                    <VisualState.Setters>
+                        <Setter Target="MasterListView.SelectionMode" Value="Extended" />
+                        <Setter Target="MasterListView.IsItemClickEnabled" Value="False" />
+                        <!--#region App Bar Commands-->
+                    
+                        <!--#endregion-->
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="ExtendedSelectionState">
+                    <VisualState.Setters>
+                        <!--#region App Bar Commands-->
+                       
+                        <!--#endregion-->
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="MultipleSelectionState">
+                    <VisualState.Setters>
+                        <Setter Target="MasterListView.SelectionMode" Value="Multiple" />
+                        <Setter Target="MasterListView.IsItemClickEnabled" Value="False" />
+                        <!--#region App Bar Commands-->
+                     
+                        <!--#endregion-->
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid Background="DeepSkyBlue" Height="200">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -42,7 +99,7 @@
                 <TextBlock RelativePanel.AlignBottomWithPanel="True" x:Name="mydatetxt" Text="Date 2019/5/23"></TextBlock>
             </RelativePanel>
             <RelativePanel Grid.Column="1">
-                <Button RelativePanel.AlignBottomWithPanel="True" Background="AliceBlue" RelativePanel.AlignRightWithPanel="True" x:Name="morebtn" Margin="0,0,50,20">
+                <Button Tapped="Morebtn_Tapped" RelativePanel.AlignBottomWithPanel="True" Background="AliceBlue" RelativePanel.AlignRightWithPanel="True" x:Name="morebtn" Margin="0,0,50,20">
                     <Button.Content>
                         <FontIcon Glyph="&#xE10C;"/>
                     </Button.Content>
@@ -61,9 +118,7 @@
                 </Style>
             </ListView.ItemContainerStyle>
             <x:String>1</x:String>
-            <x:String>2</x:String>
         </ListView>
-
         <ContentPresenter
             x:Name="DetailContentPresenter"
             Grid.Column="1"
@@ -72,7 +127,25 @@
             Padding="24,0"
             BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
             Content="test1">
-
+            <ContentPresenter.ContentTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Style="{ThemeResource TitleTextBlockStyle}"
+                                   Margin="0,8"       
+                                   Text="12345"/>
+                        <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
+                                   Margin="0,9" 
+                                   Text="提醒我" />
+                        <TextBlock Style="{ThemeResource BodyTextBlockStyle}" 
+                                   Margin="0,9" 
+                                   Text="添加截止日期" />
+                        <TextBlock Style="{ThemeResource BodyTextBlockStyle}" 
+                                   Margin="0,9" 
+                                   TextWrapping="WrapWholeWords"
+                                   Text="重复" />
+                    </StackPanel>
+                </DataTemplate>
+            </ContentPresenter.ContentTemplate>
         </ContentPresenter>
     </Grid>
 </Page>

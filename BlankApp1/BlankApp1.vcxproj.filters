@@ -12,6 +12,8 @@
     <Midl Include="App.idl" />
     <Midl Include="MainPage.idl" />
     <Midl Include="WidthFormatter.idl" />
+    <Midl Include="Taskdetail.idl" />
+    <Midl Include="HomeViewModel.idl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -19,10 +21,14 @@
     <ClCompile Include="MainPage.cpp" />
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
     <ClCompile Include="WidthFormatter.cpp" />
+    <ClCompile Include="Taskdetail.cpp" />
+    <ClCompile Include="HomeViewModel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="WidthFormatter.h" />
+    <ClInclude Include="Taskdetail.h" />
+    <ClInclude Include="HomeViewModel.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">

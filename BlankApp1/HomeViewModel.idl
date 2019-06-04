@@ -1,0 +1,11 @@
+// HomeViewModel.idl
+import "Taskdetail.idl";
+
+namespace BlankApp1
+{
+	runtimeclass HomeViewModel
+	{
+		Taskdetail Taskdetail{ get; };
+		Windows.Foundation.Collections.IObservableVector<IInspectable> Taskdetails{ get; };
+	}
+}

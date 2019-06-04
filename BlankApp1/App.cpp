@@ -34,6 +34,11 @@ App::App()
 #endif
 }
 
+void winrt::BlankApp1::implementation::App::testmethod(hstring test1)
+{
+	s = 1;
+}
+
 /// <summary>
 /// Invoked when the application is launched normally by the end user.  Other entry points
 /// will be used such as when the application is launched to open a specific file.

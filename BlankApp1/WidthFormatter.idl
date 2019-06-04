@@ -1,7 +1,6 @@
 namespace BlankApp1
 {
-	[default_interface]
-	runtimeclass WidthFormatter : Windows.UI.Xaml.Data.IValueConverter
+	runtimeclass WidthFormatter : [default] Windows.UI.Xaml.Data.IValueConverter
 	{
 		WidthFormatter();
 	}

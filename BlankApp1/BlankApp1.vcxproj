@@ -99,6 +99,7 @@
       <DependentUpon>Home.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="HomeViewModel.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.h">
       <DependentUpon>App.xaml</DependentUpon>
@@ -106,6 +107,7 @@
     <ClInclude Include="MainPage.h">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="Taskdetail.h" />
     <ClInclude Include="TaskItem.h">
       <DependentUpon>TaskItem.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -146,6 +148,7 @@
       <DependentUpon>Home.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
+    <ClCompile Include="HomeViewModel.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -156,6 +159,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="Taskdetail.cpp" />
     <ClCompile Include="TaskItem.cpp">
       <DependentUpon>TaskItem.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -170,9 +174,11 @@
       <DependentUpon>Home.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Midl>
+    <Midl Include="HomeViewModel.idl" />
     <Midl Include="MainPage.idl">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Midl>
+    <Midl Include="Taskdetail.idl" />
     <Midl Include="TaskItem.idl">
       <DependentUpon>TaskItem.xaml</DependentUpon>
       <SubType>Code</SubType>

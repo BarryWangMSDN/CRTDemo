@@ -1,0 +1,21 @@
+// Taskdetail.idl
+namespace BlankApp1
+{
+	runtimeclass Taskdetail : Windows.UI.Xaml.Data.INotifyPropertyChanged
+	{
+		String TaskTitle;		
+		Windows.Foundation.DateTime Deadline;
+		Windows.Foundation.DateTime Remindertime;
+		String Comment;		
+	}
+
+	enum Repeat
+		{
+			Daily,
+			EveryMonth,
+			EveryYear,
+			WorkingDay,
+			Customize
+		};
+	
+}
